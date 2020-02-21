@@ -1,0 +1,284 @@
+
+:root {
+    --default-font: sans;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: sans;
+    user-select: none;
+    cursor: default;
+}
+.application {
+    width: 100%;
+    height: 100%;
+}
+
+.profile {
+    display: none;
+    background: #f1f2f3;
+}
+
+.loader {
+}
+
+.open-app {
+    display: block;
+}
+
+.app-icons {
+    display: block;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.loader-container {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.loader-view {
+    display: none;
+    background: #f1f2f3;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-pic-container .profile-pic {
+    --cont-height: var(--cont-width);
+    height: var(--cont-width);
+    width: var(--cont-height);
+    background: #fff;
+    border-radius: 200vh; /*Maximum ;)*/
+    background-image: url(./s-logo2.jpg);
+    background-size: 100% 100%;
+    background-color: #fff;
+    margin: auto;
+    border: 1px solid #333;
+    transform: translate(0,48%);
+}
+
+.profile .wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 10px;
+    margin: auto;
+    margin-top: 0vh;
+    overflow: auto;
+}
+
+.public-name {
+    margin: auto;
+    text-align: center;
+    font-family: var(--default-font);
+    /* color: #fff; */
+    color: #000;
+    font-size: 1.1em;
+
+}
+
+.profile .biography {
+    font-family: var(--default-font);
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 3vh;
+}
+
+:root {
+    --profile-cover-background:radial-gradient(#2196F3,#673AB7)
+}
+.profile-pic-container {
+    --cont-width: 20vh;
+    background: var(--profile-cover-background);
+    margin-bottom: 12vh;
+}
+
+.skills {
+    display: flex;
+    font-family: var(--default-font);
+}
+
+.skills skill-bar {
+    display: inline;
+    margin: 2px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 0 5px #777;
+    font-size: 0.85em;
+    background: #fff;
+    color: #000;
+    font-weight: 100;
+    min-width: 20vh;
+    height: 8vh;
+    align-content: center;
+    align-items: center;
+    border-radius: 100px;
+}
+.skills .skill-name.expert {
+    font-weight: 500;
+}
+
+.skills-grid-container {
+    width: 90%;
+    display: block;
+    margin: auto;
+    overflow: auto;
+}
+
+
+.follow-container .follow {
+    
+}
+
+.follow-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+}
+
+:root {
+    --default-btn-back: linear-gradient(#2196F3,#673AB7);
+}
+.follow-container button {
+    background: var(--default-btn-back);
+    border:none;
+    color: #fff;
+    padding: 1.5vh;
+    display: inline;
+    border-radius: 200vh;
+    margin-left: 1vh;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    
+}
+.follow-container button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.skills-grid-container .title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.view {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+
+
+.back-btn-container {
+    position: absolute;
+    z-index: 1;
+    font-family: consolas;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+.back-btn-container .back {
+    background: #0005;
+    border-radius: 100vh;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: inherit;
+    position: relative;
+    cursor: pointer;
+    left: 2vh;
+    top: 2vh;
+}
+
+.projects-container {
+    width: 85%;
+    height: auto;
+    margin: auto;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+}
+
+.project {
+    margin-left: 3vh;
+}
+
+.projects-container .title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.project .project-name {
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.project .project-info {
+    margin-left: 2vh;
+    font-weight: 500;
+    color: #777;
+}
+
+html-components {
+    display: none;
+}
+
+project-area {
+    display: block;
+    margin-top: 1vh;
+    
+}
+
+.project .project-tools .open-project {
+    background: var(--default-btn-back);
+    border-radius: 100vh;
+    padding: 2%;
+    border: none;
+    color: #fff;
+    font-size: 0.8em;
+    cursor: pointer;
+    font-family: inherit;
+}
+.project .project-tools .open-project:hover {
+    background: #fff;
+    color: #000;
+}
+
+.app-icons .app-icon {
+    width: 20vh;
+    background: #673AB7;
+    color: #fff;
+    border: none;
+    padding: 4%;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+.app-icons .app-icon:hover {
+    background: #fff;
+    color: #000;
+}
+
+.app-icons .wrapper {
+    margin: auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 100%;
+}

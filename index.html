@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./index.css">
+    <script src="./html-compo.dev.min.js"></script>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class="application">
+        <div class="view profile">
+           <!-- <div>&nbsp;</div> -->
+            <div class="wrapper">
+               <div class="back-btn-container">
+                   <button class="back" title="Go Back">&lt;</button>
+               </div>
+                <div class="profile-pic-container">
+                    <div class="profile-pic"></div>
+                </div>
+                <div class="public-name">
+                    Sarthak Pokharel
+                </div>
+                <div class="biography">
+                    A crazy student, hobby is to learn all the Software and Hardware technologies in the world !
+                </div>
+                <div class="follow-container">
+                    <button class="follow openlink" data-url="https://sololearn.com/Profile/">
+                        Follow
+                    </button>
+                    <button class="contact openlink" data-url="mailto:sarthak.whenever@gmail.com">
+                        Contact Me
+                    </button>
+                </div>
+                
+                <div class="skills-grid-container">
+                       <div class="title">Skills</div>
+                        <div class="skills">
+                            <skill-bar skill="NodeJS" icon="node.ico"></skill-bar>
+                            <skill-bar skill="HTML" icon="s-logo.jpg"></skill-bar>
+                            <skill-bar skill="CSS" icon="s-logo.jpg"></skill-bar>
+                            <skill-bar skill="BrowserJS" icon="s-logo.jpg"></skill-bar>
+                            <skill-bar skill="PHP" icon="s-logo.jpg"></skill-bar>
+                            <skill-bar skill="Python3" icon="python3.png"></skill-bar>
+                            <skill-bar skill="Java" icon="java.png"></skill-bar>
+                            <skill-bar skill="C++" icon="c++.png"></skill-bar>
+                            <skill-bar skill="Web-Hacking" icon="./s-logo.jpg"></skill-bar>
+                    </div>
+                </div>
+                
+                <div class="projects-container">
+                   <div class="title">
+                        Top Projects
+                    </div>
+                    <project-area
+                        name="html-compo.js"
+                        description="A basic js library to create reusable webcomponents in html"
+                        url="https://code.sololearn.com/"
+                    ></project-area>
+                    <project-area
+                        name="My Portfolio"
+                        description="My profile/portfolio project. This is the project you are currently viewing"
+                        url="https://code.sololearn.com/"
+                    ></project-area>
+                    <project-area
+                        name="Private Codes Viewer"
+                        description="This project is made to show how we can fetch private code of our own"
+                        url="https://code.sololearn.com/"
+                    ></project-area>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="view loader-view">
+            <div class="loader">
+                Loading ...
+            </div>
+        </div>
+        <div class="view app-icons" >
+            <div class="wrapper">
+                <button id="open-app" class="app-icon">
+                    Click here to open application
+                </button>
+                <button class="app-icon openlink" data-url="https://sololearn.com/">
+                    Click here to go to my profile.
+                </button>
+            </div>
+        </div>
+    </div>
+    <html-components>
+        <project-area compo-attrs="name,description,url" fragment="false">
+            <div class="project">
+                <div class="project-name">
+                    @{name}
+                </div>
+                <div class="project-info">
+                    @{description}
+                </div>
+                <div class="project-tools">
+                    <button class="open-project openlink" data-url="@{url}">
+                        Open Project
+                    </button>
+                </div>
+            </div>
+        </project-area>
+        <skill-bar compo-attrs="skill,icon">
+            <style>
+                .skill-fl-container {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    
+                }
+                .skill-icon {
+                    background: url(./lang-icons/@{icon});
+                    width: 8vh;
+                    height: 8vh;
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    border-radius: 1000px;
+                    margin-right: 2vh;
+                }
+                .skill-name {
+                    display: inline-block;
+                }
+            </style>
+            <div class="skill-fl-container">
+                <div class="skill-icon"></div>
+                <div class="skill-name">@{skill}</div>
+            </div>
+        </skill-bar>
+    </html-components>
+    <script src="index.js"></script>
+</body>
+</html>
