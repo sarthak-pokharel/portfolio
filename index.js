@@ -1,4 +1,5 @@
 
+let baseUrl = location.href;
 let navState = {
     viewStack: [".app-icons"]
 };
@@ -12,19 +13,30 @@ let views = {
     loaderView: ".loader-view",
     profile: ".profile"
 };
+let imageAssets = [
+    ...[...document.querySelectorAll("skill-bar")].map(x=>baseUrl+"/lang-icons/"+x.getAttribute('icon'))
+]
 let iconicViews = [views.loaderView];
 btns.openApp.on("click", ()=> {
     showLoader();
-    wait(()=> {
-        presentView(views.profile)
-    },2000);
+    loadImages(imageAssets, ()=> {
+        presentView(views.profile);
+    });
 });
 btns.goBack.on("click", ()=> {
     goBackView();
 });
 btns.openLink.on("click", function(){
     window.open($(this).attr("data-url"));
-})
+});
+function loadImages(assets,callback) {
+    let promiseMap = assets.map(src=>new Promise(res=> {
+        let img = new Image();
+        img.onload = ()=>res();
+        img.src = src;
+    }));
+    Promise.all(promiseMap).then(r=> callback()).catch(err=>{throw err});
+}
 function presentView(view) {
     if(!iconicViews.includes(view)) {
         navState.viewStack.push(view);

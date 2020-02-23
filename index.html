@@ -9,6 +9,7 @@
     <script src="./html-compo.dev.min.js"></script>
     <script src="jquery.min.js"></script>
     <link rel="preconnect" url="https://sarthak-pokharel.github.io/portfolio/">
+    <link rel="preload" as="image" href="./lang-icons/loader.svg">
 </head>
 <body>
     <div class="application">
@@ -19,7 +20,7 @@
                    <button class="back" title="Go Back">&lt;</button>
                </div>
                 <div class="profile-pic-container">
-                    <div class="profile-pic"></div>
+                    <img src="s-logo2.jpg" class="profile-pic"><!-- </div> -->
                 </div>
                 <div class="public-name">
                     Sarthak Pokharel
@@ -39,15 +40,16 @@
                 <div class="skills-grid-container">
                        <div class="title">Skills</div>
                         <div class="skills">
-                            <skill-bar skill="NodeJS" icon="node.png"></skill-bar>
-                            <skill-bar skill="HTML" icon="html.png"></skill-bar>
+                            <skill-bar skill="NodeJS" icon="node.png" expert></skill-bar>
+                            <skill-bar skill="HTML" icon="html.png" expert></skill-bar>
                             <skill-bar skill="CSS" icon="css.png"></skill-bar>
-                            <skill-bar skill="BrowserJS" icon="js.png"></skill-bar>
-                            <skill-bar skill="PHP" icon="php.png"></skill-bar>
-                            <skill-bar skill="Python3" icon="python3.png"></skill-bar>
+                            <skill-bar skill="BrowserJS" icon="js.png" expert></skill-bar>
+                            <skill-bar skill="PHP" icon="php.png" ></skill-bar>
+                            <skill-bar skill="Python3" icon="python3.png" expert></skill-bar>
                             <skill-bar skill="Java" icon="java.png"></skill-bar>
                             <skill-bar skill="C++" icon="c++.png"></skill-bar>
-                            <skill-bar skill="Web-Hacking" icon="./hacking.jpg"></skill-bar>
+                            <skill-bar skill="Web-Hacking" icon="./hacking.jpg" expert></skill-bar>
+                            <skill-bar skill="Reverse Engineering" icon="./hacking.jpg"></skill-bar>
                     </div>
                 </div>
                 
@@ -105,8 +107,11 @@
                 </div>
             </div>
         </project-area>
-        <skill-bar compo-attrs="skill,icon">
+        <skill-bar compo-attrs="skill,icon" fragment="true">
             <style>
+                :host([expert]) .skill-name {
+                    font-weight: 500;
+                }
                 .skill-fl-container {
                     width: 100%;
                     height: 100%;
@@ -115,11 +120,11 @@
                     
                 }
                 .skill-icon {
-                    background: url(./lang-icons/@{icon});
+                    display: block;
                     width: 8vh;
                     height: 8vh;
-                    background-size: 100% 100%;
-                    background-repeat: no-repeat;
+                    /*background-size: 100% 100%;*/
+                    /*background-repeat: no-repeat;*/
                     display: inline-block;
                     border-radius: 1000px;
                     margin-right: 2vh;
@@ -129,7 +134,7 @@
                 }
             </style>
             <div class="skill-fl-container">
-                <div class="skill-icon"></div>
+                <img class="skill-icon" src='./lang-icons/@{icon}'>
                 <div class="skill-name">@{skill}</div>
             </div>
         </skill-bar>
